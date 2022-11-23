@@ -10,6 +10,10 @@ class Cell:
         btn = Button(
             location,
             text="TEXT"
-
         )
+        btn.bind("<Button-1>", self.left_click_action)
         self.cell_btn_obj = btn
+
+    def left_click_action(self, event):
+        print(event)
+        print(f"I am left clicked!")
