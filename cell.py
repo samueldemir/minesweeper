@@ -2,18 +2,27 @@ from tkinter import Button
 
 
 class Cell:
-    def __init__(self, is_mine: bool = False):
+    def __init__(self, x: int, y: int, is_mine: bool = False):
         self.is_mine = is_mine
         self.cell_btn_obj = None
+        self.x = x
+        self.y = y
 
     def create_btn_object(self, location):
         btn = Button(
             location,
-            text="TEXT"
+            width=12,
+            height=4,
+            text=f"{self.x},{self.y}"
         )
-        btn.bind("<Button-1>", self.left_click_action)
+        btn.bind("<Button-1>", self.left_click_action)  # left click
+        btn.bind("<Button-2>", self.right_click_action)  # right click
         self.cell_btn_obj = btn
 
     def left_click_action(self, event):
         print(event)
         print(f"I am left clicked!")
+
+    def right_click_action(self, event):
+        print(event)
+        print(f"I am right clicked!")
