@@ -16,8 +16,7 @@ class Cell:
             text=f"{self.x},{self.y}"
         )
         btn.bind("<Button-1>", self.left_click_action)  # left click
-        # btn.bind("<Button-2>", self.right_click_action)  # right click mac
-        btn.bind("<Button-3>", self.right_click_action)  # right click windows
+        btn.bind("<Button-2>", self.right_click_action)  # right click
         self.cell_btn_obj = btn
 
     def left_click_action(self, event):
