@@ -26,5 +26,3 @@ class Cell:
     def right_click_action(self, event):
         print(event)
         print(f"I am right clicked!")
-
-# blub
